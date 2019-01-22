@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WME Toolbox Hider
 // @namespace    https://github.com/thecre8r/
-// @version      2019.01.22.00
+// @version      2019.01.22.01
 // @description  Hides the toolbox when hovering over toolbar buttons for those of us that like the toolbox on top
 // @include      https://www.waze.com/editor*
 // @include      https://www.waze.com/*/editor*
@@ -27,7 +27,7 @@
         var config = { attributes: true, childList: true, subtree: true };
         var callback = function(mutationsList, observer) {
             for(var mutation of mutationsList) {
-                if (mutation.type == 'attributes') {
+                if (mutation.target.classList[0] == 'toolbar-submenu') {
                     if(mutation.target.classList[4] == 'open'){
                         $('#WMETB_NavBar').css('opacity','0');
                         $('#WMETB_NavBar').css('z-index','0');
