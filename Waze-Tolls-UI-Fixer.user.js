@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Tolls UI Fixer
 // @namespace    https://github.com/thecre8r/
-// @version      2019.02.16.00
+// @version      2019.02.16.01
 // @description  Presses Login when you hit enter on the password field and automatically presses continue.
 // @match        http://waze-tolls-management.appspot.com/welcome.html
 // @author       The_Cre8r
@@ -33,7 +33,6 @@
         var callback = function(mutationsList, observer) {
             for(var mutation of mutationsList) {
                 let temp = mutation.target.children[0].children[0];
-                debugger;
                 if (!mutation.target.hidden){
                     temp.click();
                     log('Click Ran');
