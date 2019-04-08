@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Waze Tolls UI Fixer
 // @namespace    https://github.com/thecre8r/
-// @version      2019.02.20.00
+// @version      2019.04.08.01
 // @description  Presses Login when you hit enter on the password field and automatically presses continue.
 // @match        http://waze-tolls-management.appspot.com/welcome.html
 // @match        https://waze-tolls-management.appspot.com/welcome.html
@@ -28,6 +28,7 @@
     }
     function MO() {
         log('MO Ran');
+        $('#username').focus();
         let temp;
         var targetNode = document.getElementById('cont');
         var config = { attributes: true, childList: true, subtree: true };
